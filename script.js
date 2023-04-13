@@ -57,9 +57,18 @@ btnRoll.addEventListener('click', function () {
 btnHold.addEventListener('click', function () {
   // 1 add current score to active players score
   scores[activePlayer] += currentScore;
-  // 2 check to see if score is already 100 - if so finish game
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
+
+  // 2 check to see if score is already 100 - if so finish game
+  if (scores[activePlayer] >= 100) {
+    document
+      .querySelector(`player--${activePlayer}`)
+      .classList.add('player--winner');
+    document
+      .querySelector(`player--${activePlayer}`)
+      .classList.remove('player--active');
+  }
   // 3 switch to other player
   switchPlayer();
 });
