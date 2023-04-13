@@ -56,7 +56,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
-// hold button press to preserver score function
+// hold button press to preserve score function
 btnHold.addEventListener('click', function () {
   if (playing) {
     // 1 add current score to active players score
